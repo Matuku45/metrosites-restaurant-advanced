@@ -44,9 +44,7 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-              <div className="h-64 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
-                <span className="text-white text-6xl">🥩</span>
-              </div>
+              <img src="/src/assets/beefwillington.webp" alt="Wagyu Beef Steak" className="w-full h-64 object-cover" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-2">Wagyu Beef Steak</h3>
                 <p className="text-gray-600 mb-4">Premium wagyu beef with seasonal vegetables and red wine reduction</p>
@@ -59,9 +57,7 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-              <div className="h-64 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
-                <span className="text-white text-6xl">🦪</span>
-              </div>
+              <img src="/src/assets/food.webp" alt="Oyster Platter" className="w-full h-64 object-cover" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-2">Oyster Platter</h3>
                 <p className="text-gray-600 mb-4">Fresh oysters with mignonette sauce and lemon wedges</p>
@@ -97,9 +93,7 @@ export default function Home() {
               </button>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-gray-200 to-gray-300 h-96 rounded-2xl shadow-2xl flex items-center justify-center">
-                <span className="text-gray-500 text-6xl">🏪</span>
-              </div>
+              <img src="/src/assets/rest2.webp" alt="MetroSites Restaurant Interior" className="h-96 rounded-2xl shadow-2xl object-cover" />
               <div className="absolute -bottom-6 -right-6 bg-yellow-400 w-24 h-24 rounded-full flex items-center justify-center shadow-lg">
                 <span className="text-2xl font-bold text-black">10+</span>
               </div>

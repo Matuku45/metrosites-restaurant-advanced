@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Text, Box, Plane } from '@react-three/drei';
+import { useState, useRef, useEffect } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { OrbitControls, Text, Box, Plane, Sphere, Cylinder } from '@react-three/drei';
+import { EffectComposer, Bloom, ChromaticAberration } from '@react-three/postprocessing';
 import * as THREE from 'three';
 import rest1 from '../assets/rest1.webp';
 import food from '../assets/food.jpg';

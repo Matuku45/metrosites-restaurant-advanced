@@ -366,9 +366,18 @@ export default function Gallery() {
           </div>
         </div>
 
-        {/* Photo Contest */}
+            {/* Photo Contest */}
         <div className="mt-16 bg-gray-100 rounded-lg p-8 text-center">
           <h2 className="text-3xl font-semibold mb-4">Share Your Experience</h2>
           <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
             Have you dined with us? Share your photos and tag us on social media for a chance to be featured in our gallery!
           </p>
+
+          <button className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300">
+            Upload Your Photo
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}

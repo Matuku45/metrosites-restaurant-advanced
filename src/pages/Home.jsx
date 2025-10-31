@@ -2,26 +2,29 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 lg:py-32">
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div className="relative container mx-auto px-4 text-center">
+      <section className="relative bg-white text-gray-800 py-20 lg:py-32">
+        <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-            Welcome to <span className="text-yellow-400">MetroSites</span>
+            Welcome to <span className="text-blue-600">MetroSites</span>
           </h1>
-          <p className="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-gray-600">
             Experience culinary excellence in the heart of the city. Where tradition meets innovation,
             and every meal tells a story of passion and perfection.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
               Reserve Your Table
             </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-bold py-4 px-8 rounded-full transition duration-300">
+            <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-4 px-8 rounded-full transition duration-300">
               View Our Menu
             </button>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+        <div className="mt-16">
+          <div className="bg-gray-100 h-96 rounded-2xl shadow-lg flex items-center justify-center mx-auto max-w-4xl">
+            <span className="text-gray-400 text-8xl">🏪</span>
+          </div>
+        </div>
       </section>
 
       {/* Featured Dishes */}

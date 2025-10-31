@@ -35,26 +35,25 @@ export default function Gallery() {
     { src: chef, alt: "Chef preparing food", category: "chef" },
     { src: winepairing, alt: "Wine selection", category: "bar" },
     { src: milkshakespecial, alt: "Dessert display", category: "food" },
-    { src: rest3, alt: "Private dining room", category: "interior" },
-    { src: rest4, alt: "Outdoor seating", category: "exterior" },
+  
     { src: winetesting, alt: "Cocktail bar", category: "bar" },
     { src: ingridients, alt: "Fresh ingredients", category: "food" },
     { src: jazevent, alt: "Event setup", category: "events" },
     { src: testimonial, alt: "Team photo", category: "staff" },
-    { src: rest5, alt: "Elegant dining space", category: "interior" },
+  
     { src: pasta, alt: "Pasta dish", category: "food" },
     { src: beefwillington, alt: "Beef Wellington", category: "food" },
     { src: chef1, alt: "Chef at work", category: "chef" },
     { src: eventholidayfiest, alt: "Holiday event", category: "events" },
     { src: testimonial2, alt: "Staff team", category: "staff" },
-    { src: food2, alt: "Fresh seafood", category: "food" },
+  
     { src: grilledsalmon, alt: "Grilled salmon", category: "food" },
     { src: chef2, alt: "Culinary team", category: "chef" },
-    { src: rest6, alt: "Modern interior", category: "interior" },
-    { src: food3, alt: "Healthy dish", category: "food" },
+  
+
     { src: happyhourspecial, alt: "Happy hour special", category: "food" },
     { src: fivewaystomaketea, alt: "Tea preparation", category: "food" },
-    { src: rest7, alt: "Cozy dining area", category: "interior" },
+
     { src: happyhourspecial2, alt: "Special cocktail", category: "bar" },
     { src: serving, alt: "Food serving", category: "chef" }
   ]
@@ -94,16 +93,15 @@ export default function Gallery() {
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {galleryImages.map((image, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-64 object-cover group-hover:scale-110 transition duration-300"
+                className="w-full h-48 object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center">
-                <button className="bg-white text-gray-800 px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition duration-300">
-                  View
-                </button>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">{image.alt}</h3>
+                <p className="text-sm text-gray-600 capitalize">{image.category}</p>
               </div>
             </div>
           ))}

@@ -1,59 +1,76 @@
-import ingridients from '../assets/ingridients.webp';
 import beefwillington from '../assets/beefwillington.webp';
 import pasta from '../assets/pasta.webp';
 import milkshakespecial from '../assets/milkshakespecial.jpg';
-import winepairing from '../assets/WINEPAIRING.webp';
 import food2 from '../assets/food2.webp';
 import grilledsalmon from '../assets/grilledsalmon.webp';
 import food3 from '../assets/food3.webp';
 import happyhourspecial from '../assets/happyhourspecial.webp';
 import winetesting from '../assets/winetesting.webp';
+import eventholidayfiest from '../assets/eventholidayfiest.webp';
+import fivewaystomaketea from '../assets/fivewaystomaketea.webp';
+import food from '../assets/food.jpg';
+import jazevent from '../assets/jazevent.webp';
+import rest1 from '../assets/rest1.webp';
+import rest2 from '../assets/rest2.webp';
+import rest3 from '../assets/rest3.webp';
+import rest4 from '../assets/rest4.webp';
+import rest5 from '../assets/rest5.webp';
+import rest6 from '../assets/rest6.webp';
+import rest7 from '../assets/rest7.webp';
+import serving from '../assets/serving.jpg';
+
+import happyhourspecial2 from '../assets/happyhourspecial2.webp';
 
 export default function Menu() {
   const menuCategories = [
     {
       title: "Appetizers",
+      image: ingridients,
       items: [
         { name: "Truffle Arancini", description: "Crispy risotto balls with truffle and Parmesan", price: "R85", image: ingridients },
-        { name: "Seared Scallops", description: "Pan-seared scallops with cauliflower purée", price: "R120", image: food2 },
-        { name: "Oyster Platter", description: "Fresh oysters with mignonette sauce", price: "R95", image: grilledsalmon },
-        { name: "Foie Gras Terrine", description: "Duck liver terrine with fig chutney", price: "R140", image: food3 }
+        { name: "Seared Scallops", description: "Pan-seared scallops with cauliflower purée", price: "R120", image: eventholidayfiest },
+        { name: "Oyster Platter", description: "Fresh oysters with mignonette sauce", price: "R95", image: fivewaystomaketea },
+        { name: "Foie Gras Terrine", description: "Duck liver terrine with fig chutney", price: "R140", image: food }
       ]
     },
     {
       title: "Main Courses",
+      image: beefwillington,
       items: [
         { name: "Wagyu Beef Steak", description: "Premium wagyu beef with seasonal vegetables", price: "R450", image: beefwillington },
         { name: "Grilled Salmon", description: "Atlantic salmon with herb butter and vegetables", price: "R285", image: grilledsalmon },
-        { name: "Duck Confit", description: "Slow-cooked duck leg with cherry gastrique", price: "R320", image: food3 },
-        { name: "Lobster Thermidor", description: "Fresh lobster in brandy cream sauce", price: "R480", image: food2 }
+        { name: "Duck Confit", description: "Slow-cooked duck leg with cherry gastrique", price: "R320", image: jazevent },
+        { name: "Lobster Thermidor", description: "Fresh lobster in brandy cream sauce", price: "R480", image: rest1 }
       ]
     },
     {
       title: "Pasta & Risotto",
+      image: pasta,
       items: [
         { name: "Truffle Risotto", description: "Creamy Arborio rice with black truffle", price: "R285", image: pasta },
-        { name: "Lobster Ravioli", description: "House-made ravioli with lobster filling", price: "R360", image: pasta },
-        { name: "Pappardelle Bolognese", description: "Slow-cooked meat sauce with fresh pasta", price: "R240", image: pasta },
-        { name: "Seafood Linguine", description: "Mixed seafood in white wine garlic sauce", price: "R320", image: food2 }
+        { name: "Lobster Ravioli", description: "House-made ravioli with lobster filling", price: "R360", image: rest2 },
+        { name: "Pappardelle Bolognese", description: "Slow-cooked meat sauce with fresh pasta", price: "R240", image: rest3 },
+        { name: "Seafood Linguine", description: "Mixed seafood in white wine garlic sauce", price: "R320", image: rest4 }
       ]
     },
     {
       title: "Desserts",
+      image: milkshakespecial,
       items: [
         { name: "Chocolate Soufflé", description: "Warm chocolate soufflé with vanilla ice cream", price: "R95", image: milkshakespecial },
         { name: "Crème Brûlée", description: "Classic vanilla crème brûlée with berries", price: "R85", image: happyhourspecial },
-        { name: "Tarte Tatin", description: "Upside-down caramelized apple tart", price: "R90", image: milkshakespecial },
-        { name: "Dessert Flight", description: "Selection of three miniature desserts", price: "R120", image: happyhourspecial }
+        { name: "Tarte Tatin", description: "Upside-down caramelized apple tart", price: "R90", image: rest5 },
+        { name: "Dessert Flight", description: "Selection of three miniature desserts", price: "R120", image: rest6 }
       ]
     },
     {
       title: "Beverages",
+      image: winepairing,
       items: [
         { name: "House Wine Selection", description: "Curated selection of South African wines", price: "R45/glass", image: winepairing },
         { name: "Craft Cocktails", description: "Signature cocktails by our mixologist", price: "R85", image: winetesting },
-        { name: "Single Origin Coffee", description: "Ethically sourced specialty coffee", price: "R35", image: happyhourspecial },
-        { name: "Artisanal Teas", description: "Premium loose-leaf tea selection", price: "R40", image: milkshakespecial }
+        { name: "Single Origin Coffee", description: "Ethically sourced specialty coffee", price: "R35", image: rest7 },
+        { name: "Artisanal Teas", description: "Premium loose-leaf tea selection", price: "R40", image: serving }
       ]
     }
   ]
@@ -85,7 +102,7 @@ export default function Menu() {
                   {category.items.map((item, itemIndex) => (
                     <div key={itemIndex} className="flex justify-between items-start py-4 border-b border-gray-100 last:border-b-0">
                       <div className="flex items-start space-x-4">
-                        <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded-lg" />
+                        <img src={item.image} alt={item.name} className="w-32 h-32 object-cover rounded-lg" />
                         <div className="flex-1">
                           <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.name}</h3>
                           <p className="text-gray-600 leading-relaxed">{item.description}</p>

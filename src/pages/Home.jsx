@@ -21,9 +21,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-16">
-          <div className="bg-gray-100 h-96 rounded-2xl shadow-lg flex items-center justify-center mx-auto max-w-4xl">
-            <span className="text-gray-400 text-8xl">🏪</span>
-          </div>
+          <img src="/src/assets/rest1.webp" alt="MetroSites Restaurant Interior" className="h-96 rounded-2xl shadow-lg mx-auto max-w-4xl object-cover" />
         </div>
       </section>
 
@@ -33,9 +31,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">Signature Dishes</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-              <div className="h-64 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
-                <span className="text-white text-6xl">🍝</span>
-              </div>
+              <img src="/src/assets/pasta.webp" alt="Truffle Risotto" className="w-full h-64 object-cover" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-2">Truffle Risotto</h3>
                 <p className="text-gray-600 mb-4">Creamy Arborio rice with black truffle shavings and Parmesan</p>

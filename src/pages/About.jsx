@@ -25,9 +25,7 @@ export default function About() {
                 Today, under the continued leadership of Chef Rodriguez and her talented team, we continue to innovate while staying true to our roots, offering an unforgettable dining experience for every guest.
               </p>
             </div>
-            <div className="bg-gray-200 h-96 rounded-lg flex items-center justify-center">
-              <span className="text-gray-500 text-lg">Restaurant Interior Image</span>
-            </div>
+            <img src="/src/assets/rest3.webp" alt="MetroSites Restaurant Interior" className="h-96 rounded-lg object-cover" />
           </div>
         </section>
 
@@ -70,23 +68,17 @@ export default function About() {
           <h2 className="text-3xl font-semibold text-center mb-12">Meet Our Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="bg-gray-200 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-gray-500">Chef Photo</span>
-              </div>
+              <img src="/src/assets/chef1.jpg" alt="Chef Maria Rodriguez" className="w-32 h-32 rounded-full mx-auto mb-4 object-cover" />
               <h3 className="text-xl font-semibold">Chef Maria Rodriguez</h3>
               <p className="text-gray-600">Executive Chef & Owner</p>
             </div>
             <div className="text-center">
-              <div className="bg-gray-200 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-gray-500">Manager Photo</span>
-              </div>
+              <img src="/src/assets/chef2.jpg" alt="John Smith" className="w-32 h-32 rounded-full mx-auto mb-4 object-cover" />
               <h3 className="text-xl font-semibold">John Smith</h3>
               <p className="text-gray-600">Restaurant Manager</p>
             </div>
             <div className="text-center">
-              <div className="bg-gray-200 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-gray-500">Sommelier Photo</span>
-              </div>
+              <img src="/src/assets/chef.jpg" alt="Sarah Johnson" className="w-32 h-32 rounded-full mx-auto mb-4 object-cover" />
               <h3 className="text-xl font-semibold">Sarah Johnson</h3>
               <p className="text-gray-600">Sommelier</p>
             </div>

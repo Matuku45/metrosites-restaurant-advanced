@@ -35,13 +35,7 @@ export default function Offers() {
       validUntil: "Ongoing",
       image: "/src/assets/milkshakespecial.jpg"
     },
-    {
-      title: "Birthday Special",
-      description: "Celebrate your birthday with us! Free dessert and a complimentary glass of champagne for the birthday person.",
-      price: "Free dessert",
-      validUntil: "With reservation",
-      image: "/src/assets/jazevent.webp"
-    }
+
   ]
 
   return (

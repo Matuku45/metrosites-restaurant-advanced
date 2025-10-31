@@ -55,19 +55,7 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-              <img src="/src/assets/food.webp" alt="Oyster Platter" className="w-full h-64 object-cover" />
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">Oyster Platter</h3>
-                <p className="text-gray-600 mb-4">Fresh oysters with mignonette sauce and lemon wedges</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-2xl font-bold text-blue-600">R180</span>
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300">
-                    Order Now
-                  </button>
-                </div>
-              </div>
+          
             </div>
           </div>
         </div>

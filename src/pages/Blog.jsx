@@ -18,24 +18,7 @@ export default function Blog() {
       category: "Ingredients",
       readTime: "7 min read"
     },
-    {
-      title: "Behind the Scenes: A Day in the Life of Our Kitchen",
-      excerpt: "Take a peek into the heart of MetroSites Restaurant. Follow our culinary team through a typical day of preparation, creativity, and passion.",
-      date: "March 10, 2024",
-      author: "John Smith, Restaurant Manager",
-      image: "/src/assets/serving.jpg",
-      category: "Behind the Scenes",
-      readTime: "6 min read"
-    },
-    {
-      title: "Sustainable Dining: Our Commitment to the Environment",
-      excerpt: "Learn about our initiatives for sustainable sourcing, waste reduction, and eco-friendly practices that keep our restaurant environmentally conscious.",
-      date: "March 5, 2024",
-      author: "MetroSites Team",
-      image: "/src/assets/food3.webp",
-      category: "Sustainability",
-      readTime: "4 min read"
-    },
+ 
     {
       title: "Classic French Techniques in Modern Cuisine",
       excerpt: "How traditional French cooking methods continue to influence contemporary restaurant menus and why they're still relevant today.",

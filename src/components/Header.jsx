@@ -14,8 +14,6 @@ export default function Header() {
     { to: '/gallery', label: 'Gallery', icon: FaImages },
     { to: '/testimonials', label: 'Testimonials', icon: FaStar },
     { to: '/reservations', label: 'Reservations', icon: FaCalendarAlt },
-    { to: '/bookings', label: 'Bookings', icon: FaConciergeBell },
-    { to: '/events', label: 'Events', icon: FaGlassCheers },
     { to: '/chef-specials', label: 'Chef Specials', icon: FaUserTie },
     { to: '/blog', label: 'Blog', icon: FaBlog }
   ]
@@ -27,7 +25,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="text-3xl font-bold text-blue-600 hover:text-blue-700 transition duration-300 flex items-center space-x-2">
             <FaUserTie className="text-blue-600" />
-            <span>MetroSites</span>
+            <span>MetroSites  Advanced Website</span>
           </Link>
 
           {/* Desktop Navigation */}

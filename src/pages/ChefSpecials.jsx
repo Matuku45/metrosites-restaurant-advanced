@@ -1,47 +1,36 @@
+import chef from '../assets/chef.jpg';
+import pasta from '../assets/pasta.webp';
+import beefwillington from '../assets/beefwillington.webp';
+import food2 from '../assets/food2.webp';
+import grilledsalmon from '../assets/grilledsalmon.webp';
+import food3 from '../assets/food3.webp';
+import milkshakespecial from '../assets/milkshakespecial.jpg';
+
 export default function ChefSpecials() {
   const chefSpecials = [
     {
       name: "Truffle Risotto",
       description: "Creamy Arborio rice cooked to perfection with black truffle shavings, Parmesan cheese, and a touch of white wine. Finished with fresh herbs and truffle oil.",
       price: "R285",
-      image: "/src/assets/pasta.webp",
+      image: pasta,
       chefNote: "This dish represents the essence of Italian comfort food with a luxurious twist."
     },
     {
       name: "Wagyu Beef Tartare",
       description: "Hand-cut premium wagyu beef mixed with traditional accompaniments: capers, shallots, quail egg yolk, and Dijon mustard. Served with toasted brioche.",
       price: "R450",
-      image: "/src/assets/beefwillington.webp",
+      image: beefwillington,
       chefNote: "A modern take on the classic French dish, showcasing the unparalleled quality of wagyu beef."
     },
-    {
-      name: "Seared Foie Gras",
-      description: "Pan-seared duck foie gras with caramelized figs, balsamic reduction, and toasted brioche. Accompanied by a microgreen salad.",
-      price: "R380",
-      image: "/src/assets/food2.webp",
-      chefNote: "The perfect balance of rich, buttery foie gras and sweet-tart figs creates an unforgettable flavor profile."
-    },
+ 
     {
       name: "Lobster Thermidor",
       description: "Fresh Maine lobster tail in a rich brandy cream sauce with Gruyère cheese, baked in the shell. Served with seasonal vegetables and rice pilaf.",
       price: "R520",
-      image: "/src/assets/grilledsalmon.webp",
+      image: grilledsalmon,
       chefNote: "A classic French dish that highlights the sweetness of lobster with the complexity of the sauce."
     },
-    {
-      name: "Black Cod Miso",
-      description: "Alaskan black cod marinated in white miso, sake, and mirin, then broiled to perfection. Served with steamed bok choy and forbidden rice.",
-      price: "R360",
-      image: "/src/assets/food3.webp",
-      chefNote: "The marriage of Japanese technique with the finest Alaskan seafood creates pure magic."
-    },
-    {
-      name: "Dessert Tasting Flight",
-      description: "A selection of three miniature desserts: chocolate soufflé, passion fruit panna cotta, and artisanal cheese plate with honeycomb.",
-      price: "R180",
-      image: "/src/assets/milkshakespecial.jpg",
-      chefNote: "End your meal with a symphony of flavors, textures, and temperatures."
-    }
+    
   ]
 
   return (
@@ -72,7 +61,7 @@ export default function ChefSpecials() {
               </p>
             </div>
             <div>
-              <img src="/src/assets/chef.jpg" alt="Chef Maria Rodriguez" className="w-full h-64 object-cover rounded-lg" />
+              <img src={chef} alt="Chef Maria Rodriguez" className="w-full h-64 object-cover rounded-lg" />
             </div>
           </div>
         </div>

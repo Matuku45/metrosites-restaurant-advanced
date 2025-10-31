@@ -1,3 +1,6 @@
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+
 export default function Contact() {
   return (
     <div className="py-16">
@@ -131,11 +134,23 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Map Placeholder */}
+            {/* Interactive Map */}
             <div className="mt-8">
               <h3 className="font-semibold text-lg mb-4">Find Us</h3>
-              <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                <span className="text-gray-500">Interactive Map</span>
+              <div className="h-64 rounded-lg overflow-hidden">
+                <MapContainer center={[-33.9249, 18.4241]} zoom={13} style={{ height: '100%', width: '100%' }}>
+                  <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  />
+                  <Marker position={[-33.9249, 18.4241]}>
+                    <Popup>
+                      Metrosites Restaurant<br />
+                      123 Main Street<br />
+                      City, State 12345
+                    </Popup>
+                  </Marker>
+                </MapContainer>
               </div>
             </div>
           </div>

@@ -32,86 +32,151 @@ import rest7 from '../assets/rest7.webp';
 import happyhourspecial2 from '../assets/happyhourspecial2.webp';
 import serving from '../assets/serving.jpg';
 
+// Animated Camera Component
+function AnimatedCamera() {
+  const cameraRef = useRef();
+
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime();
+    const radius = 15;
+    const height = 5 + Math.sin(time * 0.5) * 2;
+
+    cameraRef.current.position.x = Math.cos(time * 0.3) * radius;
+    cameraRef.current.position.z = Math.sin(time * 0.3) * radius;
+    cameraRef.current.position.y = height;
+    cameraRef.current.lookAt(0, 0, 0);
+  });
+
+  return <perspectiveCamera ref={cameraRef} fov={75} />;
+}
+
+// Floating Particles Component
+function FloatingParticles() {
+  const particlesRef = useRef();
+
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime();
+    particlesRef.current.rotation.y = time * 0.1;
+  });
+
+  return (
+    <group ref={particlesRef}>
+      {Array.from({ length: 50 }, (_, i) => (
+        <Sphere key={i} args={[0.02]} position={[
+          (Math.random() - 0.5) * 20,
+          Math.random() * 8,
+          (Math.random() - 0.5) * 20
+        ]}>
+          <meshStandardMaterial color="#FFD700" emissive="#FFD700" emissiveIntensity={0.2} />
+        </Sphere>
+      ))}
+    </group>
+  );
+}
+
+// Animated Table Component
+function AnimatedTable({ position }) {
+  const tableRef = useRef();
+
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime();
+    tableRef.current.position.y = position[1] + Math.sin(time + position[0]) * 0.05;
+  });
+
+  return (
+    <group ref={tableRef} position={position}>
+      {/* Table top */}
+      <Box args={[2, 0.1, 1]} position={[0, 0, 0]}>
+        <meshStandardMaterial color="#8B4513" />
+      </Box>
+      {/* Table legs */}
+      <Box args={[0.1, 1.5, 0.1]} position={[-0.9, -0.8, -0.4]}>
+        <meshStandardMaterial color="#654321" />
+      </Box>
+      <Box args={[0.1, 1.5, 0.1]} position={[0.9, -0.8, -0.4]}>
+        <meshStandardMaterial color="#654321" />
+      </Box>
+      <Box args={[0.1, 1.5, 0.1]} position={[-0.9, -0.8, 0.4]}>
+        <meshStandardMaterial color="#654321" />
+      </Box>
+      <Box args={[0.1, 1.5, 0.1]} position={[0.9, -0.8, 0.4]}>
+        <meshStandardMaterial color="#654321" />
+      </Box>
+      {/* Chairs */}
+      <Box args={[0.5, 0.8, 0.5]} position={[-1.2, -0.4, 0]}>
+        <meshStandardMaterial color="#DC143C" />
+      </Box>
+      <Box args={[0.5, 0.8, 0.5]} position={[1.2, -0.4, 0]}>
+        <meshStandardMaterial color="#DC143C" />
+      </Box>
+    </group>
+  );
+}
+
 // 3D Restaurant Scene Component
 function RestaurantScene() {
   return (
     <>
       {/* Lighting */}
-      <ambientLight intensity={0.6} />
-      <directionalLight position={[10, 10, 5]} intensity={1} />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} />
+      <ambientLight intensity={0.4} />
+      <directionalLight position={[10, 10, 5]} intensity={1.2} castShadow />
+      <pointLight position={[-10, -10, -10]} intensity={0.8} />
+      <spotLight position={[0, 10, 0]} angle={0.3} penumbra={1} intensity={1} castShadow />
 
       {/* Floor */}
-      <Plane args={[20, 20]} rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]}>
-        <meshStandardMaterial color="#8B4513" />
+      <Plane args={[20, 20]} rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow>
+        <meshStandardMaterial color="#8B4513" roughness={0.8} />
       </Plane>
 
       {/* Walls */}
-      <Box args={[20, 8, 0.2]} position={[0, 2, -10]}>
-        <meshStandardMaterial color="#F5F5DC" />
+      <Box args={[20, 8, 0.2]} position={[0, 2, -10]} castShadow receiveShadow>
+        <meshStandardMaterial color="#F5F5DC" roughness={0.9} />
       </Box>
-      <Box args={[20, 8, 0.2]} position={[0, 2, 10]} rotation={[0, Math.PI, 0]}>
-        <meshStandardMaterial color="#F5F5DC" />
+      <Box args={[20, 8, 0.2]} position={[0, 2, 10]} rotation={[0, Math.PI, 0]} castShadow receiveShadow>
+        <meshStandardMaterial color="#F5F5DC" roughness={0.9} />
       </Box>
-      <Box args={[0.2, 8, 20]} position={[-10, 2, 0]}>
-        <meshStandardMaterial color="#F5F5DC" />
+      <Box args={[0.2, 8, 20]} position={[-10, 2, 0]} castShadow receiveShadow>
+        <meshStandardMaterial color="#F5F5DC" roughness={0.9} />
       </Box>
-      <Box args={[0.2, 8, 20]} position={[10, 2, 0]} rotation={[0, Math.PI, 0]}>
-        <meshStandardMaterial color="#F5F5DC" />
+      <Box args={[0.2, 8, 20]} position={[10, 2, 0]} rotation={[0, Math.PI, 0]} castShadow receiveShadow>
+        <meshStandardMaterial color="#F5F5DC" roughness={0.9} />
       </Box>
 
-      {/* Tables */}
+      {/* Animated Tables */}
       {[0, 1, 2].map((i) => (
-        <group key={i} position={[-5 + i * 5, -1.5, -3]}>
-          {/* Table top */}
-          <Box args={[2, 0.1, 1]} position={[0, 0, 0]}>
-            <meshStandardMaterial color="#8B4513" />
-          </Box>
-          {/* Table legs */}
-          <Box args={[0.1, 1.5, 0.1]} position={[-0.9, -0.8, -0.4]}>
-            <meshStandardMaterial color="#654321" />
-          </Box>
-          <Box args={[0.1, 1.5, 0.1]} position={[0.9, -0.8, -0.4]}>
-            <meshStandardMaterial color="#654321" />
-          </Box>
-          <Box args={[0.1, 1.5, 0.1]} position={[-0.9, -0.8, 0.4]}>
-            <meshStandardMaterial color="#654321" />
-          </Box>
-          <Box args={[0.1, 1.5, 0.1]} position={[0.9, -0.8, 0.4]}>
-            <meshStandardMaterial color="#654321" />
-          </Box>
-          {/* Chairs */}
-          <Box args={[0.5, 0.8, 0.5]} position={[-1.2, -0.4, 0]}>
-            <meshStandardMaterial color="#DC143C" />
-          </Box>
-          <Box args={[0.5, 0.8, 0.5]} position={[1.2, -0.4, 0]}>
-            <meshStandardMaterial color="#DC143C" />
-          </Box>
-        </group>
+        <AnimatedTable key={i} position={[-5 + i * 5, -1.5, -3]} />
       ))}
 
       {/* Bar Counter */}
-      <Box args={[8, 1, 1]} position={[0, -0.5, 6]}>
-        <meshStandardMaterial color="#8B4513" />
+      <Box args={[8, 1, 1]} position={[0, -0.5, 6]} castShadow receiveShadow>
+        <meshStandardMaterial color="#8B4513" roughness={0.7} />
       </Box>
-      <Box args={[8, 0.5, 0.5]} position={[0, 0, 6.5]}>
-        <meshStandardMaterial color="#654321" />
+      <Box args={[8, 0.5, 0.5]} position={[0, 0, 6.5]} castShadow receiveShadow>
+        <meshStandardMaterial color="#654321" roughness={0.6} />
       </Box>
 
       {/* Bar Stools */}
       {[0, 1, 2, 3].map((i) => (
-        <Box key={i} args={[0.4, 0.8, 0.4]} position={[-3 + i * 2, -0.4, 5]}>
-          <meshStandardMaterial color="#000000" />
-        </Box>
+        <Cylinder key={i} args={[0.2, 0.2, 0.8]} position={[-3 + i * 2, -0.4, 5]} castShadow>
+          <meshStandardMaterial color="#2C2C2C" roughness={0.8} />
+        </Cylinder>
       ))}
 
       {/* Decorative Elements */}
-      <Box args={[0.2, 3, 0.2]} position={[-9, 0.5, -9]}>
+      <Box args={[0.2, 3, 0.2]} position={[-9, 0.5, -9]} castShadow>
         <meshStandardMaterial color="#228B22" />
       </Box>
-      <Box args={[0.2, 3, 0.2]} position={[9, 0.5, -9]}>
+      <Box args={[0.2, 3, 0.2]} position={[9, 0.5, -9]} castShadow>
         <meshStandardMaterial color="#228B22" />
       </Box>
+
+      {/* Chandelier */}
+      <Cylinder args={[0.5, 0.8, 0.3]} position={[0, 6, 0]} castShadow>
+        <meshStandardMaterial color="#FFD700" emissive="#FFD700" emissiveIntensity={0.1} />
+      </Cylinder>
+
+      {/* Floating Particles */}
+      <FloatingParticles />
 
       {/* Welcome Text */}
       <Text
@@ -123,6 +188,12 @@ function RestaurantScene() {
       >
         Welcome to MetroSites Restaurant
       </Text>
+
+      {/* Post-processing Effects */}
+      <EffectComposer>
+        <Bloom intensity={0.5} luminanceThreshold={0.9} />
+        <ChromaticAberration offset={[0.002, 0.002]} />
+      </EffectComposer>
     </>
   );
 }
@@ -212,32 +283,33 @@ export default function Gallery() {
         <div className="mt-16 text-center">
           <h2 className="text-3xl font-semibold mb-4">Virtual Tour</h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Experience MetroSites from the comfort of your home with our interactive 3D virtual tour.
-            Walk through our dining areas and get a feel for the ambiance.
+            Experience MetroSites from the comfort of your home with our immersive 3D virtual tour.
+            Watch the automatic camera movement and explore our restaurant in stunning detail.
           </p>
-          {!showTour ? (
-            <button
-              onClick={() => setShowTour(true)}
-              className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300"
-            >
-              Start Virtual Tour
-            </button>
-          ) : (
-            <div className="mb-8">
-              <div className="h-96 bg-black rounded-lg overflow-hidden mb-4">
-                <Canvas camera={{ position: [0, 5, 10], fov: 75 }}>
-                  <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
-                  <RestaurantScene />
-                </Canvas>
-              </div>
+          <div className="mb-8">
+            <div className="h-96 bg-black rounded-lg overflow-hidden mb-4">
+              <Canvas camera={{ position: [0, 5, 10], fov: 75 }}>
+                <AnimatedCamera />
+                <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
+                <RestaurantScene />
+              </Canvas>
+            </div>
+            <div className="flex justify-center space-x-4">
               <button
-                onClick={() => setShowTour(false)}
-                className="bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition duration-300"
+                onClick={() => setShowTour(!showTour)}
+                className={`px-8 py-3 rounded-full font-semibold transition duration-300 ${
+                  showTour
+                    ? 'bg-red-600 text-white hover:bg-red-700'
+                    : 'bg-blue-600 text-white hover:bg-blue-700'
+                }`}
               >
-                Exit Virtual Tour
+                {showTour ? 'Stop Auto Tour' : 'Start Auto Tour'}
+              </button>
+              <button className="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition duration-300">
+                Manual Controls
               </button>
             </div>
-          )}
+          </div>
         </div>
 
         {/* Photo Contest */}

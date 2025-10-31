@@ -3,34 +3,46 @@ export default function Menu() {
     {
       title: "Appetizers",
       items: [
-        { name: "Bruschetta", description: "Toasted bread topped with tomatoes, garlic, and basil", price: "$8.99" },
-        { name: "Calamari Rings", description: "Crispy fried squid with marinara sauce", price: "$12.99" },
-        { name: "Stuffed Mushrooms", description: "Mushroom caps filled with cheese and herbs", price: "$10.99" }
+        { name: "Truffle Arancini", description: "Crispy risotto balls with truffle and Parmesan", price: "R85" },
+        { name: "Seared Scallops", description: "Pan-seared scallops with cauliflower purée", price: "R120" },
+        { name: "Oyster Platter", description: "Fresh oysters with mignonette sauce", price: "R95" },
+        { name: "Foie Gras Terrine", description: "Duck liver terrine with fig chutney", price: "R140" }
       ]
     },
     {
       title: "Main Courses",
       items: [
-        { name: "Grilled Salmon", description: "Fresh Atlantic salmon with lemon butter sauce", price: "$24.99" },
-        { name: "Beef Tenderloin", description: "8oz premium cut with red wine reduction", price: "$32.99" },
-        { name: "Chicken Parmesan", description: "Breaded chicken breast with marinara and mozzarella", price: "$19.99" },
-        { name: "Vegetarian Pasta", description: "Penne with seasonal vegetables in garlic olive oil", price: "$16.99" }
+        { name: "Wagyu Beef Steak", description: "Premium wagyu beef with seasonal vegetables", price: "R450" },
+        { name: "Grilled Salmon", description: "Atlantic salmon with herb butter and vegetables", price: "R285" },
+        { name: "Duck Confit", description: "Slow-cooked duck leg with cherry gastrique", price: "R320" },
+        { name: "Lobster Thermidor", description: "Fresh lobster in brandy cream sauce", price: "R480" }
+      ]
+    },
+    {
+      title: "Pasta & Risotto",
+      items: [
+        { name: "Truffle Risotto", description: "Creamy Arborio rice with black truffle", price: "R285" },
+        { name: "Lobster Ravioli", description: "House-made ravioli with lobster filling", price: "R360" },
+        { name: "Pappardelle Bolognese", description: "Slow-cooked meat sauce with fresh pasta", price: "R240" },
+        { name: "Seafood Linguine", description: "Mixed seafood in white wine garlic sauce", price: "R320" }
       ]
     },
     {
       title: "Desserts",
       items: [
-        { name: "Tiramisu", description: "Classic Italian dessert with coffee and mascarpone", price: "$7.99" },
-        { name: "Chocolate Lava Cake", description: "Warm chocolate cake with molten center", price: "$8.99" },
-        { name: "Cheesecake", description: "New York style cheesecake with berry compote", price: "$6.99" }
+        { name: "Chocolate Soufflé", description: "Warm chocolate soufflé with vanilla ice cream", price: "R95" },
+        { name: "Crème Brûlée", description: "Classic vanilla crème brûlée with berries", price: "R85" },
+        { name: "Tarte Tatin", description: "Upside-down caramelized apple tart", price: "R90" },
+        { name: "Dessert Flight", description: "Selection of three miniature desserts", price: "R120" }
       ]
     },
     {
       title: "Beverages",
       items: [
-        { name: "House Wine", description: "Red or white, glass", price: "$6.99" },
-        { name: "Craft Beer", description: "Selection of local craft beers", price: "$5.99" },
-        { name: "Specialty Coffee", description: "Espresso, cappuccino, or latte", price: "$4.99" }
+        { name: "House Wine Selection", description: "Curated selection of South African wines", price: "R45/glass" },
+        { name: "Craft Cocktails", description: "Signature cocktails by our mixologist", price: "R85" },
+        { name: "Single Origin Coffee", description: "Ethically sourced specialty coffee", price: "R35" },
+        { name: "Artisanal Teas", description: "Premium loose-leaf tea selection", price: "R40" }
       ]
     }
   ]
@@ -38,32 +50,67 @@ export default function Menu() {
   return (
     <div className="py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-12">Our Menu</h1>
-
-        {menuCategories.map((category, index) => (
-          <div key={index} className="mb-12">
-            <h2 className="text-2xl font-semibold mb-6 border-b-2 border-blue-600 pb-2">{category.title}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {category.items.map((item, itemIndex) => (
-                <div key={itemIndex} className="bg-white rounded-lg shadow-md p-6">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-semibold">{item.name}</h3>
-                    <span className="text-lg font-bold text-blue-600">{item.price}</span>
-                  </div>
-                  <p className="text-gray-600">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-
-        <div className="text-center mt-12">
-          <p className="text-lg text-gray-600 mb-4">
-            All prices are subject to change. Please inform your server of any allergies or dietary restrictions.
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-5xl font-bold mb-6 text-gray-800">Our Menu</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Discover our carefully crafted menu featuring the finest ingredients and innovative culinary techniques.
+            Each dish is prepared with passion and attention to detail.
           </p>
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300">
-            Make a Reservation
-          </button>
+        </div>
+
+        {/* Menu Categories */}
+        <div className="space-y-16">
+          {menuCategories.map((category, categoryIndex) => (
+            <div key={categoryIndex} className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6">
+                <h2 className="text-3xl font-bold">{category.title}</h2>
+              </div>
+              <div className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {category.items.map((item, itemIndex) => (
+                    <div key={itemIndex} className="flex justify-between items-start py-4 border-b border-gray-100 last:border-b-0">
+                      <div className="flex-1">
+                        <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.name}</h3>
+                        <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                      </div>
+                      <div className="ml-6">
+                        <span className="text-2xl font-bold text-blue-600">{item.price}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Special Notes */}
+        <div className="mt-16 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-8 border-l-4 border-yellow-400">
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">Menu Notes</h3>
+          <ul className="text-gray-700 space-y-2">
+            <li>• All prices are in South African Rand (ZAR) and include VAT</li>
+            <li>• Menu items may contain allergens - please inform your server of any dietary requirements</li>
+            <li>• We accommodate vegetarian, vegan, and gluten-free requests with advance notice</li>
+            <li>• Chef's recommendations are marked with a ⭐ symbol</li>
+            <li>• Wine pairings available for all main courses</li>
+          </ul>
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-16 text-center">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">Ready to Experience Our Cuisine?</h2>
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Make a reservation today and let our culinary team create an unforgettable dining experience for you.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-4 px-8 rounded-full hover:from-blue-700 hover:to-blue-800 transition duration-300 shadow-lg transform hover:scale-105">
+              Make a Reservation
+            </button>
+            <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-4 px-8 rounded-full transition duration-300">
+              Call Us: +27 21 123 4567
+            </button>
+          </div>
         </div>
       </div>
     </div>

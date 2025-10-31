@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaHome, FaUtensils, FaInfoCircle, FaPhone, FaTags, FaImages, FaStar, FaCalendarAlt, FaConciergeBell, FaGlassCheers, FaChefHat, FaBlog, FaBars, FaTimes } from 'react-icons/fa'
+import { FaHome, FaUtensils, FaInfoCircle, FaPhone, FaTags, FaImages, FaStar, FaCalendarAlt, FaConciergeBell, FaGlassCheers, FaUserTie, FaBlog, FaBars, FaTimes } from 'react-icons/fa'
 import { useState } from 'react'
 
 export default function Header() {
@@ -16,17 +16,17 @@ export default function Header() {
     { to: '/reservations', label: 'Reservations', icon: FaCalendarAlt },
     { to: '/bookings', label: 'Bookings', icon: FaConciergeBell },
     { to: '/events', label: 'Events', icon: FaGlassCheers },
-    { to: '/chef-specials', label: 'Chef Specials', icon: FaChefHat },
+    { to: '/chef-specials', label: 'Chef Specials', icon: FaUserTie },
     { to: '/blog', label: 'Blog', icon: FaBlog }
   ]
 
   return (
-    <header className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 shadow-lg sticky top-0 z-50">
+    <header className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="text-3xl font-bold text-white hover:text-blue-100 transition duration-300 flex items-center space-x-2">
-            <FaChefHat className="text-yellow-400" />
+          <Link to="/" className="text-3xl font-bold text-blue-600 hover:text-blue-700 transition duration-300 flex items-center space-x-2">
+            <FaUserTie className="text-blue-600" />
             <span>MetroSites</span>
           </Link>
 
@@ -36,7 +36,7 @@ export default function Header() {
               <Link
                 key={item.to}
                 to={item.to}
-                className="flex items-center space-x-2 px-4 py-2 text-white hover:bg-white hover:bg-opacity-20 rounded-lg transition duration-300 font-medium"
+                className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition duration-300 font-medium"
               >
                 <item.icon className="text-sm" />
                 <span>{item.label}</span>
@@ -47,7 +47,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-white hover:text-blue-100 transition duration-300 p-2"
+            className="lg:hidden text-gray-700 hover:text-blue-600 transition duration-300 p-2"
           >
             {isMenuOpen ? <FaTimes className="w-6 h-6" /> : <FaBars className="w-6 h-6" />}
           </button>
@@ -55,16 +55,16 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-blue-800 bg-opacity-95 backdrop-blur-sm rounded-lg mt-2 py-4 px-2 shadow-xl">
+          <div className="lg:hidden bg-white border border-gray-200 rounded-lg mt-2 py-4 px-2 shadow-xl">
             <nav className="grid grid-cols-2 gap-2">
               {navItems.map((item) => (
                 <Link
                   key={item.to}
                   to={item.to}
                   onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center space-x-3 px-4 py-3 text-white hover:bg-white hover:bg-opacity-20 rounded-lg transition duration-300 font-medium"
+                  className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition duration-300 font-medium"
                 >
-                  <item.icon className="text-lg text-yellow-400" />
+                  <item.icon className="text-lg text-blue-600" />
                   <span className="text-sm">{item.label}</span>
                 </Link>
               ))}

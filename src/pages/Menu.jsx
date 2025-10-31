@@ -25,16 +25,6 @@ import happyhourspecial2 from '../assets/happyhourspecial2.webp';
 export default function Menu() {
   const menuCategories = [
     {
-      title: "Appetizers",
-      image: ingridients,
-      items: [
-        { name: "Truffle Arancini", description: "Crispy risotto balls with truffle and Parmesan", price: "R85", image: ingridients },
-        { name: "Seared Scallops", description: "Pan-seared scallops with cauliflower purée", price: "R120", image: eventholidayfiest },
-        { name: "Oyster Platter", description: "Fresh oysters with mignonette sauce", price: "R95", image: fivewaystomaketea },
-        { name: "Foie Gras Terrine", description: "Duck liver terrine with fig chutney", price: "R140", image: food }
-      ]
-    },
-    {
       title: "Main Courses",
       image: beefwillington,
       items: [
@@ -49,7 +39,7 @@ export default function Menu() {
       image: pasta,
       items: [
         { name: "Truffle Risotto", description: "Creamy Arborio rice with black truffle", price: "R285", image: pasta },
-        { name: "Lobster Ravioli", description: "House-made ravioli with lobster filling", price: "R360", image: rest2 },
+        { name: "Lobster Ravioli", description: "House-made ravioli with lobster filling, served with mixed vegetables and salad", price: "R360", image: rest2 },
         { name: "Pappardelle Bolognese", description: "Slow-cooked meat sauce with fresh pasta", price: "R240", image: rest3 },
         { name: "Seafood Linguine", description: "Mixed seafood in white wine garlic sauce", price: "R320", image: rest4 }
       ]
@@ -60,8 +50,7 @@ export default function Menu() {
       items: [
         { name: "Chocolate Soufflé", description: "Warm chocolate soufflé with vanilla ice cream", price: "R95", image: milkshakespecial },
         { name: "Crème Brûlée", description: "Classic vanilla crème brûlée with berries", price: "R85", image: happyhourspecial },
-        { name: "Tarte Tatin", description: "Upside-down caramelized apple tart", price: "R90", image: rest5 },
-        { name: "Dessert Flight", description: "Selection of three miniature desserts", price: "R120", image: rest6 }
+        { name: "Tarte Tatin", description: "Upside-down caramelized apple tart", price: "R90", image: rest5 }
       ]
     },
     {
@@ -70,8 +59,7 @@ export default function Menu() {
       items: [
         { name: "House Wine Selection", description: "Curated selection of South African wines", price: "R45/glass", image: winepairing },
         { name: "Craft Cocktails", description: "Signature cocktails by our mixologist", price: "R85", image: winetesting },
-        { name: "Single Origin Coffee", description: "Ethically sourced specialty coffee", price: "R35", image: rest7 },
-        { name: "Artisanal Teas", description: "Premium loose-leaf tea selection", price: "R40", image: serving }
+        { name: "Single Origin Coffee", description: "Ethically sourced specialty coffee, served with chips and steak", price: "R35", image: rest7 }
       ]
     }
   ]

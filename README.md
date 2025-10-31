@@ -1,16 +1,73 @@
-# React + Vite
+ech Stack / Tools:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + TypeScript + Tailwind CSS
 
-Currently, two official plugins are available:
+Next.js for SSR / SEO-friendly pages
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React Router or Next.js routing
 
-## React Compiler
+Redux Toolkit / Zustand for state management (menu, cart, orders)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Mocked API or static JSON files for backend simulation
 
-## Expanding the ESLint configuration
+LocalStorage for cart, reservations, and favorites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Framer Motion + Lottie for advanced animations
+
+Swiper / React Slick for galleries
+
+React Hot Toast / Notistack for notifications
+
+Recharts / Chart.js for dashboard stats
+
+i18next for multi-language support
+
+React Helmet / Next.js Head for SEO & meta tags
+
+Hosting: Vercel (frontend) / Netlify
+
+Design: Figma (high-fidelity prototypes)
+
+VS Code Extensions: Prettier, ESLint, TailwindCSS IntelliSense, TypeScript Hero
+
+Analytics: Google Analytics / Plausible / Hotjar
+
+CI/CD: GitHub Actions for automatic deploys
+
+Features:
+
+All intermediate features
+
+Online ordering simulation (add to cart, checkout)
+
+Loyalty / favorite dishes (LocalStorage-based)
+
+Multi-location menu (tabs & filtering)
+
+Dashboard page (simulated orders/reservations with charts)
+
+Advanced animations and interactive UI
+
+Multi-language support
+
+SEO optimization & social media meta tags****
+
+About
+No description, website, or topics provided.
+Resources
+ Readme
+ Activity
+Stars
+ 0 stars
+Watchers
+ 0 watching
+Forks
+ 0 forks
+Releases
+No releases published
+Create a new release
+Packages
+No packages published
+Publish your first package
+Footer
+© 2025 GitHub, 

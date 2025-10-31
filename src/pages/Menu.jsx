@@ -1,6 +1,8 @@
+import ingridients from '../assets/ingridients.webp';
 import beefwillington from '../assets/beefwillington.webp';
 import pasta from '../assets/pasta.webp';
 import milkshakespecial from '../assets/milkshakespecial.jpg';
+import winepairing from '../assets/WINEPAIRING.webp';
 import food2 from '../assets/food2.webp';
 import grilledsalmon from '../assets/grilledsalmon.webp';
 import food3 from '../assets/food3.webp';
@@ -18,7 +20,6 @@ import rest5 from '../assets/rest5.webp';
 import rest6 from '../assets/rest6.webp';
 import rest7 from '../assets/rest7.webp';
 import serving from '../assets/serving.jpg';
-
 import happyhourspecial2 from '../assets/happyhourspecial2.webp';
 
 export default function Menu() {

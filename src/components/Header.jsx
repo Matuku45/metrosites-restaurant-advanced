@@ -53,22 +53,32 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation Overlay */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-white border border-gray-200 rounded-lg mt-2 py-4 px-2 shadow-xl">
-            <nav className="grid grid-cols-2 gap-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition duration-300 font-medium"
-                >
-                  <item.icon className="text-lg text-blue-600" />
-                  <span className="text-sm">{item.label}</span>
-                </Link>
-              ))}
+          <div className="lg:hidden fixed inset-0 bg-white z-40 flex flex-col pt-20">
+            <nav className="flex-1 px-4 py-8">
+              <div className="grid grid-cols-1 gap-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center space-x-4 px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition duration-300 font-medium text-lg"
+                  >
+                    <item.icon className="text-xl text-blue-600" />
+                    <span>{item.label}</span>
+                  </Link>
+                ))}
+              </div>
             </nav>
+            <div className="p-4 border-t border-gray-200">
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold"
+              >
+                Close Menu
+              </button>
+            </div>
           </div>
         )}
       </div>

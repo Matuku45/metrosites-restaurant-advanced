@@ -5,7 +5,7 @@ export default function Blog() {
       excerpt: "Discover how to perfectly match wines with your favorite dishes. Learn the fundamentals of wine pairing and elevate your dining experience.",
       date: "March 20, 2024",
       author: "Sarah Johnson, Sommelier",
-      image: "/api/placeholder/400/250",
+      image: "/src/assets/WINEPAIRING.webp",
       category: "Wine & Beverages",
       readTime: "5 min read"
     },
@@ -14,7 +14,7 @@ export default function Blog() {
       excerpt: "Explore the freshest spring ingredients and how our chefs incorporate them into innovative dishes. From asparagus to strawberries, spring has never tasted better.",
       date: "March 15, 2024",
       author: "Chef Maria Rodriguez",
-      image: "/api/placeholder/400/250",
+      image: "/src/assets/ingridients.webp",
       category: "Ingredients",
       readTime: "7 min read"
     },
@@ -23,7 +23,7 @@ export default function Blog() {
       excerpt: "Take a peek into the heart of MetroSites Restaurant. Follow our culinary team through a typical day of preparation, creativity, and passion.",
       date: "March 10, 2024",
       author: "John Smith, Restaurant Manager",
-      image: "/api/placeholder/400/250",
+      image: "/src/assets/serving.jpg",
       category: "Behind the Scenes",
       readTime: "6 min read"
     },
@@ -32,7 +32,7 @@ export default function Blog() {
       excerpt: "Learn about our initiatives for sustainable sourcing, waste reduction, and eco-friendly practices that keep our restaurant environmentally conscious.",
       date: "March 5, 2024",
       author: "MetroSites Team",
-      image: "/api/placeholder/400/250",
+      image: "/src/assets/food3.webp",
       category: "Sustainability",
       readTime: "4 min read"
     },
@@ -41,7 +41,7 @@ export default function Blog() {
       excerpt: "How traditional French cooking methods continue to influence contemporary restaurant menus and why they're still relevant today.",
       date: "February 28, 2024",
       author: "Chef Maria Rodriguez",
-      image: "/api/placeholder/400/250",
+      image: "/src/assets/pasta.webp",
       category: "Culinary Arts",
       readTime: "8 min read"
     },

@@ -50,7 +50,7 @@ export default function Blog() {
       excerpt: "Tips and tricks for hosting memorable dinner parties, from menu planning to table setting. Make your next gathering unforgettable.",
       date: "February 20, 2024",
       author: "Events Team",
-      image: "/api/placeholder/400/250",
+      image: "/src/assets/jazevent.webp",
       category: "Events",
       readTime: "6 min read"
     }

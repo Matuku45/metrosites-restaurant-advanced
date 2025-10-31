@@ -3,43 +3,43 @@ export default function ChefSpecials() {
     {
       name: "Truffle Risotto",
       description: "Creamy Arborio rice cooked to perfection with black truffle shavings, Parmesan cheese, and a touch of white wine. Finished with fresh herbs and truffle oil.",
-      price: "$28.99",
-      image: "/api/placeholder/400/300",
+      price: "R285",
+      image: "/src/assets/pasta.webp",
       chefNote: "This dish represents the essence of Italian comfort food with a luxurious twist."
     },
     {
       name: "Wagyu Beef Tartare",
       description: "Hand-cut premium wagyu beef mixed with traditional accompaniments: capers, shallots, quail egg yolk, and Dijon mustard. Served with toasted brioche.",
-      price: "$42.99",
-      image: "/api/placeholder/400/300",
+      price: "R450",
+      image: "/src/assets/beefwillington.webp",
       chefNote: "A modern take on the classic French dish, showcasing the unparalleled quality of wagyu beef."
     },
     {
       name: "Seared Foie Gras",
       description: "Pan-seared duck foie gras with caramelized figs, balsamic reduction, and toasted brioche. Accompanied by a microgreen salad.",
-      price: "$36.99",
-      image: "/api/placeholder/400/300",
+      price: "R380",
+      image: "/src/assets/food2.webp",
       chefNote: "The perfect balance of rich, buttery foie gras and sweet-tart figs creates an unforgettable flavor profile."
     },
     {
       name: "Lobster Thermidor",
       description: "Fresh Maine lobster tail in a rich brandy cream sauce with Gruyère cheese, baked in the shell. Served with seasonal vegetables and rice pilaf.",
-      price: "$48.99",
-      image: "/api/placeholder/400/300",
+      price: "R520",
+      image: "/src/assets/grilledsalmon.webp",
       chefNote: "A classic French dish that highlights the sweetness of lobster with the complexity of the sauce."
     },
     {
       name: "Black Cod Miso",
       description: "Alaskan black cod marinated in white miso, sake, and mirin, then broiled to perfection. Served with steamed bok choy and forbidden rice.",
-      price: "$34.99",
-      image: "/api/placeholder/400/300",
+      price: "R360",
+      image: "/src/assets/food3.webp",
       chefNote: "The marriage of Japanese technique with the finest Alaskan seafood creates pure magic."
     },
     {
       name: "Dessert Tasting Flight",
       description: "A selection of three miniature desserts: chocolate soufflé, passion fruit panna cotta, and artisanal cheese plate with honeycomb.",
-      price: "$18.99",
-      image: "/api/placeholder/400/300",
+      price: "R180",
+      image: "/src/assets/milkshakespecial.jpg",
       chefNote: "End your meal with a symphony of flavors, textures, and temperatures."
     }
   ]

@@ -1,197 +1,130 @@
+import React, { useState, useEffect } from "react";
+
 export default function Bookings() {
+  const [isSimulating, setIsSimulating] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [message, setMessage] = useState("Preparing your order...");
+
+  const startSimulation = (e) => {
+    e.preventDefault();
+    setIsSimulating(true);
+    setProgress(0);
+    setMessage("Preparing your order...");
+
+    let steps = [
+      "Gathering ingredients 🥕🥩",
+      "Heating up the stove 🔥",
+      "Cooking your dish 🍳",
+      "Plating and garnishing 🍽️",
+      "Final touches by the chef 👨‍🍳",
+      "Order ready! ✅",
+    ];
+
+    let i = 0;
+    const interval = setInterval(() => {
+      setProgress((p) => Math.min(p + 20, 100));
+      setMessage(steps[i]);
+      i++;
+      if (i >= steps.length) {
+        clearInterval(interval);
+        setTimeout(() => setIsSimulating(false), 2000);
+      }
+    }, 1200);
+  };
+
+  useEffect(() => {
+    if (!isSimulating) setProgress(0);
+  }, [isSimulating]);
+
   return (
-    <div className="py-16">
+    <div className="py-16 min-h-screen bg-gradient-to-b from-gray-50 to-gray-200">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-8">Event Bookings</h1>
+        <h1 className="text-4xl font-bold text-center mb-8">
+          Advanced Restaurant Simulation
+        </h1>
         <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-          Host your special events at MetroSites Restaurant. From intimate gatherings to grand celebrations, we provide exceptional service and cuisine for all occasions.
+          Experience our interactive booking system. Click "Submit Order" to
+          watch your virtual chef prepare your event in real-time!
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Booking Form */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-6">Book Your Event</h2>
-            <form className="bg-white rounded-lg shadow-md p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="John"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Doe"
-                  />
-                </div>
+        <div className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+          {!isSimulating ? (
+            <form onSubmit={startSimulation} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500"
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500"
+                  required
+                />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="john@example.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="(555) 123-4567"
-                  />
-                </div>
-              </div>
+              <select
+                className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500"
+                required
+              >
+                <option value="">Select Event Type</option>
+                <option>Wedding</option>
+                <option>Corporate</option>
+                <option>Birthday</option>
+                <option>Private Dinner</option>
+              </select>
 
-              <div className="mb-6">
-                <label htmlFor="eventType" className="block text-sm font-medium text-gray-700 mb-2">Event Type</label>
-                <select
-                  id="eventType"
-                  name="eventType"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option value="">Select event type</option>
-                  <option value="wedding">Wedding Reception</option>
-                  <option value="corporate">Corporate Event</option>
-                  <option value="birthday">Birthday Party</option>
-                  <option value="anniversary">Anniversary Celebration</option>
-                  <option value="graduation">Graduation Party</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">Preferred Date</label>
-                  <input
-                    type="date"
-                    id="date"
-                    name="date"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="guests" className="block text-sm font-medium text-gray-700 mb-2">Number of Guests</label>
-                  <select
-                    id="guests"
-                    name="guests"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                  >
-                    <option value="">Select guests</option>
-                    <option value="10-25">10-25 Guests</option>
-                    <option value="26-50">26-50 Guests</option>
-                    <option value="51-100">51-100 Guests</option>
-                    <option value="100+">100+ Guests</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">Budget Range (per person)</label>
-                <select
-                  id="budget"
-                  name="budget"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option value="">Select budget range</option>
-                  <option value="50-75">$50-$75 per person</option>
-                  <option value="75-100">$75-$100 per person</option>
-                  <option value="100-150">$100-$150 per person</option>
-                  <option value="150+">$150+ per person</option>
-                </select>
-              </div>
-
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Event Details</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Tell us about your event, special requirements, dietary restrictions, etc..."
-                ></textarea>
-              </div>
+              <textarea
+                rows="4"
+                placeholder="Event Details..."
+                className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500"
+              ></textarea>
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition duration-300 font-semibold"
+                className="w-full bg-blue-600 text-white py-3 rounded-md font-semibold hover:bg-blue-700 transition-all"
               >
-                Submit Event Inquiry
+                Submit Order
               </button>
             </form>
-          </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center text-center">
+              <div className="text-5xl animate-bounce mb-6">👨‍🍳</div>
+              <h2 className="text-2xl font-semibold mb-4 text-gray-700">
+                {message}
+              </h2>
 
-          {/* Event Information */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-6">Event Services</h2>
-
-            <div className="space-y-6">
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="text-xl font-semibold mb-4">Wedding Receptions</h3>
-                <p className="text-gray-600 mb-4">
-                  Make your special day unforgettable with our elegant wedding packages, including custom menus, floral arrangements, and professional service.
-                </p>
-                <ul className="text-gray-600 space-y-1">
-                  <li>• Custom wedding cake</li>
-                  <li>• Professional photography</li>
-                  <li>• Ceremony coordination</li>
-                  <li>• Special occasion menu</li>
-                </ul>
+              {/* Animated Progress Bar */}
+              <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden mb-4">
+                <div
+                  className="h-full bg-green-500 transition-all duration-700 ease-in-out"
+                  style={{ width: `${progress}%` }}
+                ></div>
               </div>
 
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="text-xl font-semibold mb-4">Corporate Events</h3>
-                <p className="text-gray-600 mb-4">
-                  Host successful business meetings, presentations, or team-building events in our private dining rooms with full AV capabilities.
-                </p>
-                <ul className="text-gray-600 space-y-1">
-                  <li>• Private dining rooms</li>
-                  <li>• AV equipment available</li>
-                  <li>• Business lunch specials</li>
-                  <li>• Custom catering options</li>
-                </ul>
-              </div>
+              <p className="text-gray-500 italic animate-pulse">
+                Please wait while your event is being prepared...
+              </p>
 
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="text-xl font-semibold mb-4">Private Parties</h3>
-                <p className="text-gray-600 mb-4">
-                  Celebrate birthdays, anniversaries, or any special occasion with our flexible party packages and personalized service.
-                </p>
-                <ul className="text-gray-600 space-y-1">
-                  <li>• Themed decorations</li>
-                  <li>• Custom menu options</li>
-                  <li>• Dedicated event coordinator</li>
-                  <li>• Flexible timing</li>
-                </ul>
+              {/* Animation: floating food icons */}
+              <div className="mt-8 flex space-x-4 text-3xl">
+                <span className="animate-bounce">🍕</span>
+                <span className="animate-bounce delay-100">🍜</span>
+                <span className="animate-bounce delay-200">🍷</span>
+                <span className="animate-bounce delay-300">🥗</span>
               </div>
             </div>
+          )}
+        </div>
 
-            {/* Contact Info */}
-            <div className="mt-8 bg-gray-50 rounded-lg p-6">
-              <h3 className="text-lg font-semibold mb-4">Event Planning Team</h3>
-              <p className="text-gray-600 mb-2">For event inquiries and custom packages:</p>
-              <p className="font-semibold">Events Manager: Sarah Johnson</p>
-              <p className="text-gray-600">Phone: (555) 123-4568</p>
-              <p className="text-gray-600">Email: events@metrosites.com</p>
-            </div>
-          </div>
+        <div className="mt-12 text-center">
+          <p className="text-gray-700">
+            Experience the <span className="font-bold text-blue-600">MetroSites</span> virtual kitchen — where code meets cuisine.
+          </p>
         </div>
       </div>
     </div>
-  )
+  );
 }

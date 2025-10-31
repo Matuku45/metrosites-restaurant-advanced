@@ -1,33 +1,62 @@
+import rest1 from '/src/assets/rest1.webp';
+import food from '/src/assets/food.jpg';
+import rest2 from '/src/assets/rest2.webp';
+import chef from '/src/assets/chef.jpg';
+import winepairing from '/src/assets/WINEPAIRING.webp';
+import milkshakespecial from '/src/assets/milkshakespecial.jpg';
+import rest3 from '/src/assets/rest3.webp';
+import rest4 from '/src/assets/rest4.webp';
+import winetesting from '/src/assets/winetesting.webp';
+import ingridients from '/src/assets/ingridients.webp';
+import jazevent from '/src/assets/jazevent.webp';
+import testimonial from '/src/assets/testimonial.jpg';
+import rest5 from '/src/assets/rest5.webp';
+import pasta from '/src/assets/pasta.webp';
+import beefwillington from '/src/assets/beefwillington.webp';
+import chef1 from '/src/assets/chef1.jpg';
+import eventholidayfiest from '/src/assets/eventholidayfiest.webp';
+import testimonial2 from '/src/assets/testimonial2.jpg';
+import food2 from '/src/assets/food2.webp';
+import grilledsalmon from '/src/assets/grilledsalmon.webp';
+import chef2 from '/src/assets/chef2.jpg';
+import rest6 from '/src/assets/rest6.webp';
+import food3 from '/src/assets/food3.webp';
+import happyhourspecial from '/src/assets/happyhourspecial.webp';
+import fivewaystomaketea from '/src/assets/fivewaystomaketea.webp';
+import rest7 from '/src/assets/rest7.webp';
+import happyhourspecial2 from '/src/assets/happyhourspecial2.webp';
+import serving from '/src/assets/serving.jpg';
+
 export default function Gallery() {
   const galleryImages = [
-    { src: "/src/assets/rest1.webp", alt: "Restaurant interior", category: "interior" },
-    { src: "/src/assets/food.jpg", alt: "Signature dish", category: "food" },
-    { src: "/src/assets/rest2.webp", alt: "Dining area", category: "interior" },
-    { src: "/src/assets/chef.jpg", alt: "Chef preparing food", category: "chef" },
-    { src: "/src/assets/WINEPAIRING.webp", alt: "Wine selection", category: "bar" },
-    { src: "/src/assets/milkshakespecial.jpg", alt: "Dessert display", category: "food" },
-    { src: "/src/assets/rest3.webp", alt: "Private dining room", category: "interior" },
-    { src: "/src/assets/rest4.webp", alt: "Outdoor seating", category: "exterior" },
-    { src: "/src/assets/winetesting.webp", alt: "Cocktail bar", category: "bar" },
-    { src: "/src/assets/ingridients.webp", alt: "Fresh ingredients", category: "food" },
-    { src: "/src/assets/jazevent.webp", alt: "Event setup", category: "events" },
-    { src: "/src/assets/testimonial.jpg", alt: "Team photo", category: "staff" },
-    { src: "/src/assets/rest5.webp", alt: "Elegant dining space", category: "interior" },
-    { src: "/src/assets/pasta.webp", alt: "Pasta dish", category: "food" },
-    { src: "/src/assets/beefwillington.webp", alt: "Beef Wellington", category: "food" },
-    { src: "/src/assets/chef1.jpg", alt: "Chef at work", category: "chef" },
-    { src: "/src/assets/eventholidayfiest.webp", alt: "Holiday event", category: "events" },
-    { src: "/src/assets/testimonial2.jpg", alt: "Staff team", category: "staff" },
-    { src: "/src/assets/food2.webp", alt: "Fresh seafood", category: "food" },
-    { src: "/src/assets/grilledsalmon.webp", alt: "Grilled salmon", category: "food" },
-    { src: "/src/assets/chef2.jpg", alt: "Culinary team", category: "chef" },
-    { src: "/src/assets/rest6.webp", alt: "Modern interior", category: "interior" },
-    { src: "/src/assets/food3.webp", alt: "Healthy dish", category: "food" },
-    { src: "/src/assets/happyhourspecial.webp", alt: "Happy hour special", category: "food" },
-    { src: "/src/assets/fivewaystomaketea.webp", alt: "Tea preparation", category: "food" },
-    { src: "/src/assets/rest7.webp", alt: "Cozy dining area", category: "interior" },
-    { src: "/src/assets/happyhourspecial2.webp", alt: "Special cocktail", category: "bar" },
-    { src: "/src/assets/serving.jpg", alt: "Food serving", category: "chef" }
+    { src: rest1, alt: "Restaurant interior", category: "interior" },
+    { src: food, alt: "Signature dish", category: "food" },
+    { src: rest2, alt: "Dining area", category: "interior" },
+    { src: chef, alt: "Chef preparing food", category: "chef" },
+    { src: winepairing, alt: "Wine selection", category: "bar" },
+    { src: milkshakespecial, alt: "Dessert display", category: "food" },
+    { src: rest3, alt: "Private dining room", category: "interior" },
+    { src: rest4, alt: "Outdoor seating", category: "exterior" },
+    { src: winetesting, alt: "Cocktail bar", category: "bar" },
+    { src: ingridients, alt: "Fresh ingredients", category: "food" },
+    { src: jazevent, alt: "Event setup", category: "events" },
+    { src: testimonial, alt: "Team photo", category: "staff" },
+    { src: rest5, alt: "Elegant dining space", category: "interior" },
+    { src: pasta, alt: "Pasta dish", category: "food" },
+    { src: beefwillington, alt: "Beef Wellington", category: "food" },
+    { src: chef1, alt: "Chef at work", category: "chef" },
+    { src: eventholidayfiest, alt: "Holiday event", category: "events" },
+    { src: testimonial2, alt: "Staff team", category: "staff" },
+    { src: food2, alt: "Fresh seafood", category: "food" },
+    { src: grilledsalmon, alt: "Grilled salmon", category: "food" },
+    { src: chef2, alt: "Culinary team", category: "chef" },
+    { src: rest6, alt: "Modern interior", category: "interior" },
+    { src: food3, alt: "Healthy dish", category: "food" },
+    { src: happyhourspecial, alt: "Happy hour special", category: "food" },
+    { src: fivewaystomaketea, alt: "Tea preparation", category: "food" },
+    { src: rest7, alt: "Cozy dining area", category: "interior" },
+    { src: happyhourspecial2, alt: "Special cocktail", category: "bar" },
+    { src: serving, alt: "Food serving", category: "chef" }
   ]
 
   const categories = [

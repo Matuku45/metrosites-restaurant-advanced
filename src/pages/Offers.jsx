@@ -5,42 +5,42 @@ export default function Offers() {
       description: "Enjoy our signature brunch menu with bottomless mimosas for only R285 per person. Available Saturdays and Sundays from 10 AM to 2 PM.",
       price: "R285",
       validUntil: "Ongoing",
-      image: "/api/placeholder/400/300"
+      image: "/src/assets/fivewaystomaketea.webp"
     },
     {
       title: "Date Night Package",
       description: "Romantic dinner for two including appetizer, main course, dessert, and a bottle of house wine. Perfect for special occasions.",
       price: "R850",
       validUntil: "Valid through December 31st",
-      image: "/api/placeholder/400/300"
+      image: "/src/assets/eventholidayfiest.webp"
     },
     {
       title: "Family Feast",
       description: "Family-style dining for 4-6 people featuring our chef's selection of appetizers, entrees, and desserts. Great value for groups!",
       price: "R1,420",
       validUntil: "Available weekdays",
-      image: "/api/placeholder/400/300"
+      image: "/src/assets/food.jpg"
     },
     {
       title: "Happy Hour",
       description: "Half-price appetizers and select drinks from 4 PM to 6 PM daily. Join us for great food and drinks at amazing prices!",
       price: "50% off",
       validUntil: "Daily 4-6 PM",
-      image: "/api/placeholder/400/300"
+      image: "/src/assets/happyhourspecial.webp"
     },
     {
       title: "Loyalty Program",
       description: "Earn points with every visit! After 10 visits, enjoy a complimentary meal. Join our loyalty program today.",
       price: "Free",
       validUntil: "Ongoing",
-      image: "/api/placeholder/400/300"
+      image: "/src/assets/milkshakespecial.jpg"
     },
     {
       title: "Birthday Special",
       description: "Celebrate your birthday with us! Free dessert and a complimentary glass of champagne for the birthday person.",
       price: "Free dessert",
       validUntil: "With reservation",
-      image: "/api/placeholder/400/300"
+      image: "/src/assets/jazevent.webp"
     }
   ]
 
@@ -58,9 +58,7 @@ export default function Offers() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {offers.map((offer, index) => (
             <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-              <div className="h-48 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                <div className="text-6xl text-blue-300">🎁</div>
-              </div>
+              <img src={offer.image} alt={offer.title} className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-800 mb-3">{offer.title}</h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">{offer.description}</p>

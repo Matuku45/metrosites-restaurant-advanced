@@ -5,42 +5,42 @@ export default function Testimonials() {
       rating: 5,
       date: "March 15, 2024",
       review: "Absolutely incredible dining experience! The food was exceptional, and the service was impeccable. The chef's special risotto was the highlight of our evening. Will definitely be back!",
-      image: "/api/placeholder/80/80"
+      image: "/src/assets/testimonial.jpg"
     },
     {
       name: "Michael Chen",
       rating: 5,
       date: "March 10, 2024",
       review: "MetroSites never disappoints. The ambiance is perfect for date nights, and the wine selection is outstanding. The staff really knows their craft. Highly recommended!",
-      image: "/api/placeholder/80/80"
+      image: "/src/assets/testimonial2.jpg"
     },
     {
       name: "Emily Rodriguez",
       rating: 5,
       date: "March 5, 2024",
       review: "Celebrated my anniversary here and it was magical. The attention to detail in every dish was remarkable. The dessert menu is a must-try!",
-      image: "/api/placeholder/80/80"
+      image: "/src/assets/chef.jpg"
     },
     {
       name: "David Thompson",
       rating: 4,
       date: "February 28, 2024",
       review: "Great food and excellent service. The beef tenderloin was cooked to perfection. Only minor complaint was the wait time, but it was worth it.",
-      image: "/api/placeholder/80/80"
+      image: "/src/assets/chef1.jpg"
     },
     {
       name: "Lisa Park",
       rating: 5,
       date: "February 20, 2024",
       review: "Best restaurant in the city! The vegetarian options are creative and delicious. The staff accommodated my dietary restrictions perfectly.",
-      image: "/api/placeholder/80/80"
+      image: "/src/assets/chef2.jpg"
     },
     {
       name: "Robert Wilson",
       rating: 5,
       date: "February 15, 2024",
       review: "Attended a business dinner here and was impressed by everything. The private dining room was perfect, and the food presentation was stunning.",
-      image: "/api/placeholder/80/80"
+      image: "/src/assets/serving.jpg"
     }
   ]
 

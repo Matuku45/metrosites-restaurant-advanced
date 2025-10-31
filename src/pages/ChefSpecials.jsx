@@ -71,8 +71,8 @@ export default function ChefSpecials() {
                 and I strive to make each meal a memorable chapter in our guests' lives."
               </p>
             </div>
-            <div className="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-              <span className="text-gray-600 text-lg">Chef Maria Rodriguez</span>
+            <div>
+              <img src="/src/assets/chef.jpg" alt="Chef Maria Rodriguez" className="w-full h-64 object-cover rounded-lg" />
             </div>
           </div>
         </div>
